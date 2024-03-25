@@ -1,236 +1,212 @@
 {
-    "S_HELLO ": {
+    "S_Hello ": {
         "sec": "5",
-        "fileName": "hello.wav",
+        "fileName": "new.py",
         "reb_state": false,
         "qq_state": false,
-        "answering_machine ": {
+        "Answering Machine ": {
             "fileName": "",
-            "next_state": "disp_A "
+            "next_state": "disp_ANS "
         },
         "DNC ": {
             "fileName": "",
             "next_state": "disp_DNC "
         },
         "NotSpoke ": {
-            "fileName": "are_you_there.wav",
-            "next_state": "S_HELLO "
+            "fileName": "",
+            "next_state": "S_Hello "
         },
         "None ": {
             "fileName": "",
-            "next_state": "S_INTRO "
+            "next_state": "S_Intro "
         }
     },
-    "S_INTRO ": {
+    "S_Intro ": {
         "sec": "5",
-        "fileName": "intro.wav",
+        "fileName": "Screenshot from 2024-03-19 17-10-59.png",
         "reb_state": false,
         "qq_state": false,
+        "Answering Machine ": {
+            "fileName": "",
+            "next_state": "disp_ANS "
+        },
         "DNC ": {
             "fileName": "",
             "next_state": "disp_DNC "
         },
-        "answering_machine ": {
-            "fileName": "",
-            "next_state": "disp_A "
-        },
-        "GreetBack ": {
-            "fileName": "doing_good.wav",
-            "next_state": "S_PITCH "
-        },
-        "greetings ": {
-            "fileName": "",
-            "next_state": "S_PITCH "
-        },
         "None ": {
             "fileName": "",
-            "next_state": "S_PITCH "
-        },
-        "calling_about ": {
-            "fileName": "",
-            "next_state": "S_PITCH "
-        },
-        "whom_calling ": {
-            "fileName": "",
-            "next_state": "S_PITCH "
+            "next_state": "S_Pitch "
         },
         "NotSpoke ": {
-            "fileName": "are_you_there.wav",
-            "next_state": "S_INTRO "
+            "fileName": "botflow(7).json",
+            "next_state": "S_Intro "
         },
-        "BUSY ": {
+        "Busy ": {
             "fileName": "",
-            "next_state": "S_BUSY "
+            "next_state": "S_Busy "
         }
     },
-    "S_PITCH ": {
+    "S_Pitch ": {
         "sec": "5",
-        "fileName": "pitch.wav",
+        "fileName": "",
         "reb_state": false,
         "qq_state": true,
-        "scam ": {
+        "None ": {
             "fileName": "",
-            "next_state": "disp_DNC "
+            "next_state": "disp_N "
         },
-        "abusive ": {
+        "Answering Machine ": {
             "fileName": "",
-            "next_state": "disp_DNC "
+            "next_state": "disp_ANS "
         },
         "DNC ": {
             "fileName": "",
             "next_state": "disp_DNC "
         },
-        "answering_machine ": {
-            "fileName": "",
-            "next_state": "disp_A "
-        },
-        "BUSY ": {
-            "fileName": "",
-            "next_state": "S_BUSY "
-        },
-        "Not_Interested ": {
-            "fileName": "",
-            "next_state": "S_NI "
-        },
-        "already ": {
-            "fileName": "",
-            "next_state": "S_ALREADY "
-        },
-        "provide_company ": {
-            "fileName": "alright.wav",
-            "next_state": "S_PRICE_QUESTION "
-        },
-        "calling_about ": {
-            "fileName": "",
-            "next_state": "S_WHY "
-        },
         "NotSpoke ": {
             "fileName": "",
-            "next_state": "S_ARE_YOU_THERE "
-        },
-        "provide_price ": {
-            "fileName": "",
-            "next_state": "S_PRICES "
-        },
-        "having_contract ": {
-            "fileName": "",
-            "next_state": "S_CONTRACT "
+            "next_state": "S_Intro "
         }
     },
-    "S_TRANSFER ": {
-        "sec": "4",
-        "fileName": "transfer_consent.wav",
+    "S_BUSY": {
+        "sec": "5",
+        "fileName": "",
         "reb_state": false,
-        "qq_state": false,
-        "NotSpoke ": {
+        "qq_state": true,
+        "Answering Machine ": {
             "fileName": "",
-            "next_state": "disp_XFER "
-        },
-        "None ": {
-            "fileName": "",
-            "next_state": "disp_XFER "
-        },
-        "affirmation ": {
-            "fileName": "",
-            "next_state": "disp_XFER "
-        },
-        "Not_Interested ": {
-            "fileName": "",
-            "next_state": "disp_NI "
-        },
-        "decline ": {
-            "fileName": "",
-            "next_state": "disp_NI "
-        },
-        "scam ": {
-            "fileName": "",
-            "next_state": "disp_DNC "
+            "next_state": "disp_ANS "
         },
         "DNC ": {
             "fileName": "",
             "next_state": "disp_DNC "
         },
-        "abusive ": {
+        "None ": {
             "fileName": "",
-            "next_state": "disp_DNC "
-        },
-        "answering_machine ": {
-            "fileName": "",
-            "next_state": "disp_A "
-        },
-        "BUSY ": {
-            "fileName": "",
-            "next_state": "disp_B "
-        }
-    },
-    "S_BUSY ": {
-        "sec": "5",
-        "fileName": "",
-        "reb_state": true,
-        "qq_state": false,
-        "abusive ": {
-            "fileName": "",
-            "next_state": "disp_DNC "
-        },
-        "DNC ": {
-            "fileName": "",
-            "next_state": "disp_DNC "
-        },
-        "scam ": {
-            "fileName": "",
-            "next_state": "disp_DNC "
-        },
-        "decline ": {
-            "fileName": "",
-            "next_state": "disp_B "
-        },
-        "BUSY ": {
-            "fileName": "",
-            "next_state": "disp_B "
-        },
-        "answering_machine ": {
-            "fileName": "",
-            "next_state": "disp_A "
-        },
-        "Not_Interested ": {
-            "fileName": "",
-            "next_state": "S_NI "
-        },
-        "ask_prices ": {
-            "fileName": "",
-            "next_state": "S_PRICES "
-        },
-        "affirmation ": {
-            "fileName": "",
-            "next_state": "S_PREV_STATE "
+            "next_state": "S_Pitch "
         },
         "NotSpoke ": {
             "fileName": "",
-            "next_state": "S_PREV_STATE "
-        },
-        "None ": {
-            "fileName": "",
-            "next_state": "S_PREV_STATE "
-        },
-        "already ": {
-            "fileName": "",
-            "next_state": "S_ALREADY "
+            "next_state": "S_Intro "
         }
     },
-    "S_NI ": {
+    "S_QQ_1": {
         "sec": "5",
-        "fileName": "",
-        "reb_state": true,
-        "qq_state": false
-    },
-    "S_ALREADY ": {
-        "sec": "5",
-        "fileName": "",
+        "fileName": "index.html",
         "reb_state": true,
         "qq_state": true,
-        "greetings ": {
+        "Answering Machine ": {
+            "fileName": "Laravel.zip",
+            "next_state": "disp_ANS "
+        },
+        "DNC ": {
+            "fileName": "Laravel.zip",
+            "next_state": "disp_DNC "
+        },
+        "None ": {
+            "fileName": "Laravel.zip",
+            "next_state": "S_Pitch "
+        },
+        "NotSpoke ": {
+            "fileName": "Laravel.zip",
+            "next_state": "S_Intro "
+        }
+    },
+    "S_QQ_2": {
+        "sec": "5",
+        "fileName": "",
+        "reb_state": false,
+        "qq_state": true,
+        "Answering Machine ": {
             "fileName": "",
-            "next_state": "disp_A "
+            "next_state": "disp_QQ_2"
+        },
+        "DNC ": {
+            "fileName": "",
+            "next_state": "disp_DNC "
+        },
+        "None ": {
+            "fileName": "",
+            "next_state": "S_Pitch "
+        },
+        "NotSpoke ": {
+            "fileName": "",
+            "next_state": "S_Intro "
+        }
+    },
+    "S_Previous_State ": {
+        "sec": "5",
+        "fileName": "new.py",
+        "reb_state": true,
+        "qq_state": true,
+        "Answering Machine ": {
+            "fileName": "Screenshot from 2024-03-19 17-10-59.png",
+            "next_state": "disp_ANS "
+        },
+        "Positive ": {
+            "fileName": "Laravel.zip",
+            "next_state": "disp_NP "
+        },
+        "NotSpoke ": {
+            "fileName": "Screenshot from 2024-03-17 22-49-52.png",
+            "next_state": "disp_N "
+        },
+        "Busy ": {
+            "fileName": "",
+            "next_state": "S_Busy "
+        }
+    },
+    "S_Negative": {
+        "sec": "90",
+        "fileName": "index.html",
+        "reb_state": true,
+        "qq_state": true,
+        "Answering Machine ": {
+            "fileName": "",
+            "next_state": "disp_ANS "
+        },
+        "DNC ": {
+            "fileName": "",
+            "next_state": "disp_DNC "
+        },
+        "None ": {
+            "fileName": "",
+            "next_state": "S_Pitch "
+        },
+        "Negative": {
+            "fileName": "botflow(7).json",
+            "next_state": "S_Intro "
+        },
+        "Busy ": {
+            "fileName": "Screenshot from 2024-03-17 22-49-52.png",
+            "next_state": "S_Busy "
+        }
+    },
+    "S_Sample": {
+        "sec": "90",
+        "fileName": "index.html",
+        "reb_state": true,
+        "qq_state": true,
+        "Answering Machine ": {
+            "fileName": "Screenshot from 2024-03-17 22-49-52.png",
+            "next_state": "disp_ANS "
+        },
+        "DNC ": {
+            "fileName": "frontend",
+            "next_state": "disp_DNC "
+        },
+        "None ": {
+            "fileName": "Data.zip",
+            "next_state": "S_Pitch "
+        },
+        "sample": {
+            "fileName": "botflow(7).json",
+            "next_state": "S_Intro "
+        },
+        "Busy ": {
+            "fileName": "Screenshot from 2024-03-17 22-49-52.png",
+            "next_state": "S_Busy "
         }
     }
 }

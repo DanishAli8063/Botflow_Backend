@@ -54,7 +54,7 @@ function StateNode ({ id, onSendData, data, isConnectable,onInputChange,onFileCh
           checked,
           qqChecked
         };
-        console.log(dataToSend)
+        // console.log('apna nam',dataToSend)
         onSendData(id, dataToSend);
       }
     };

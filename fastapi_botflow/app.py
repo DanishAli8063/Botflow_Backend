@@ -61,7 +61,6 @@ class Flow(BaseModel):
 class ClassItem(BaseModel):
     text: str
 
-
 class StateNode(BaseModel):
     text: str
     selectedState: str
@@ -69,11 +68,9 @@ class StateNode(BaseModel):
 def get_states_name():
     collection = db['states_collection']
     documents = list(collection.find({}, {'link': 1}))
-
+    # print("documents : ",documents)
     return documents
 
-# Fastapi code
-# @app.get("/generate-bot-json")
 def generate_bot_json():
     bot_json = {}
 
@@ -82,10 +79,15 @@ def generate_bot_json():
         if response.status_code == 200:
             text = response.json()
             nodes = text.get('nodes',[])
-            print(nodes)
+            # print("Nodes : ",nodes)
+            # print("label_prefix: ", label_prefix)
+            # print("data: ", text)
             if len(nodes) > 1:
                 get_custom_json = GetCustomJson()
-                return get_custom_json.forward(data=text, label_prefix=label_prefix)
+                data_dict = {}
+                data_dict = get_custom_json.forward(data=text, label_prefix=label_prefix)
+                print("data_dict : ",data_dict)
+                return data_dict
             else:
                 return {}
         else:
@@ -95,10 +97,10 @@ def generate_bot_json():
         state_lists = get_states_name()
 
         for state_item in state_lists:
-            print(state_item)
+            # print("state_item : ",state_item)
             bot_json.update(process_api_request(f'http://localhost:8000/get_state_flow/{state_item["link"]}', 'disp_'))
 
-            print(bot_json)
+            # print("bot_json : ",bot_json)
 
         # Specify the file path where you want to save the JSON data
         file_path = 'bot_flow.json'
@@ -111,8 +113,7 @@ def generate_bot_json():
 
     except HTTPException as e:
         raise e
-
-    
+   
 @app.get("/download-bot-json")
 def download_bot_json():
     generate_bot_json()
@@ -130,7 +131,6 @@ async def hello_flow(flow: Flow):
     print(result)
     return {"message": "Flow saved successfully", "result": str(result.upserted_id)}
 
-
 @app.get("/get-hello-flow")
 async def get_hello_flow():
     collection = db['hello_flows']
@@ -144,7 +144,6 @@ async def get_hello_flow():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     
-
 @app.post('/save_state_flow/{state}')
 async def save_state_flow(state:str,flow:Flow):
     collection = db['states_collection']
@@ -207,8 +206,6 @@ async def get_items():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     
-
-
 @app.post("/save-disposition/")
 async def save_disposition(item: ClassItem):
     try:
@@ -233,18 +230,20 @@ async def get_disposition():
 def update_node_data(nodes,label):
     nodes[1]['data']['label'] = label
     return nodes
+
 @app.post("/save-state/")
 async def save_state(item: StateNode):
     try:
         # print(item)
         collection = db.states_collection
-        print(item.selectedState)
+        # print("Selected State : ",item.selectedState)
         data_ret = get_stat_flow_1(lower_and_replace_spaces(item.selectedState))
-        print(data_ret)
+        # print("Data after Process : ",data_ret)
         edges = data_ret.get('edges',[])
         nodes = data_ret.get('nodes',[])
-        if len(nodes) > 2:
-            nodes = update_node_data(nodes=nodes,label=item.text)
+        # print("length : ",len(nodes))
+        # if len(nodes) > 2:
+        #     nodes = update_node_data(nodes=nodes,label=item.text)
         # Inserting the item into the collection
         data = {"class_name": item.text,'link':lower_and_replace_spaces(item.text),
                 "edges":edges,"nodes":nodes,
@@ -255,7 +254,6 @@ async def save_state(item: StateNode):
         print(e)
         raise HTTPException(status_code=500, detail=str(e))
     
-
 @app.get("/get-states/")
 async def get_states():
     try:

@@ -109,7 +109,7 @@ const PlaceHolderState = () => {
       const saveFlowToServer = async () => {
         try {
           // Log the nodes data for debugging
-          console.log("Nodes Data:", nodes);
+          // console.log("Nodes Data:", nodes);
           const response = await fetch(server_address+'save_state_flow/' + item, {
             method: 'POST',
             headers: {

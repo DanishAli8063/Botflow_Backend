@@ -33,7 +33,7 @@ class GetCustomJson:
                 else:
                     pass
             i+=1
-        print(state_nodes)
+        # print(state_nodes)
         state_nodes = state_nodes[0]
         
         return self.get_main_state_info(state_nodes)
@@ -88,7 +88,6 @@ class GetCustomJson:
 
         return connections
     
-
     def create_label_based_connection_map(self, nodes, connections, bottom_bar_nodes):
         """
         Creates a dictionary with labels of bottom bar nodes as keys and dictionaries of associated node data as values.
@@ -127,7 +126,6 @@ class GetCustomJson:
         """
         disable_state_nodes = [node for node in data['nodes'] if node['type'] == 'disableStateNode']
         return disable_state_nodes
-
 
     def forward(self, data, label_prefix):
         """
