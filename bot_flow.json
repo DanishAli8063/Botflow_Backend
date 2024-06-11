@@ -1,0 +1,24 @@
+{
+    "S_Hello ": {
+        "sec": "5",
+        "files": [],
+        "reb_state": false,
+        "qq_state": false,
+        "Negative ": {
+            "files": [],
+            "next_state": "disp_N "
+        },
+        "DNC ": {
+            "files": [],
+            "next_state": "disp_DNC "
+        },
+        "Abusive ": {
+            "files": [],
+            "next_state": "disp_DNC "
+        },
+        "Not Intereseted ": {
+            "files": [],
+            "next_state": "disp_NP "
+        }
+    }
+}

@@ -1,0 +1,9 @@
+pymongo
+fastapi
+uvicorn
+gunicorn
+requests
+passlib
+python-jose
+python-multipart
+bcrypt
