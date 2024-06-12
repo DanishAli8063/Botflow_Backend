@@ -1,8 +1,8 @@
 ---
 
-# BotFlow_Backend
+# BotFlow - Backend
 
-An impressive project to manage and analyze customer interactions using machine learning techniques and MongoDB.
+An advanced project to manage and analyze customer interactions using machine learning techniques, MongoDB, and a GUI for creating and managing bot states, classes, and dispositions.
 
 ## Table of Contents
 
@@ -17,13 +17,14 @@ An impressive project to manage and analyze customer interactions using machine 
 
 ## Introduction
 
-This project aims to process and analyze conversations between customers and salesmen to assess their efficiency. The application uses Python with FastAPI for the backend, MongoDB for the database, and integrates machine learning models to provide insights.
+This project aims to process and analyze conversations between customers and salesmen to assess their efficiency. The application uses Python with FastAPI for the backend, MongoDB for the database, and integrates machine learning models to provide insights. A user-friendly GUI is provided for creating and managing bot states, classes, and dispositions.
 
 ## Features
 
 - Efficient processing of large audio files and their transcripts.
 - RESTful API with FastAPI.
 - MongoDB for storing and managing conversation data.
+- GUI for creating and managing bot states, classes, and dispositions.
 - Scalable and containerized deployment using Docker.
 
 ## Prerequisites
@@ -75,6 +76,28 @@ mongod
    ```
    http://127.0.0.1:8000/docs
    ```
+
+3. Access the GUI to create and manage bot states, classes, and dispositions at:
+   ```
+   http://127.0.0.1:8000/gui
+   ```
+
+## Bot Management with GUI
+
+### States
+
+- **Definition**: States represent different stages in the bot's interaction flow.
+- **Management**: Use the GUI to create, update, and delete states. Each state can have associated actions and transitions.
+
+### Classes
+
+- **Definition**: Classes categorize various elements within the bot's workflow, such as customer intents or response types.
+- **Management**: Classes can be defined and managed through the GUI to organize and streamline bot interactions.
+
+### Dispositions
+
+- **Definition**: Dispositions refer to the outcomes or statuses of interactions, such as resolved, escalated, or pending.
+- **Management**: The GUI allows for the easy creation and management of dispositions to track and analyze interaction results.
 
 ## Contributing
 
